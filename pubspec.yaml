@@ -1,4 +1,4 @@
-name: tekartik_common
+name: tekartik_utils
 description: Common dart utilities
 dev_dependencies:
   unittest: any
