@@ -84,7 +84,7 @@ List jsArrayAsList(JsArray jsArray) {
   for (int i = 0; i < jsArray.length; i++) {
     var value = jsArray[i];
     if (value is JsObject) {
-      value = jsObjectAsCollection(value); 
+      value = jsObjectAsCollection(value);
     }
     list.add(value);
   }
@@ -108,6 +108,60 @@ Map jsObjectAsMap(JsObject jsObject) {
 String jsRuntimeType(JsObject jsObject) {
   return jsObject['constructor']['name'].toString();
 }
+
 JsObject jsUint8Array(Uint8List list) {
   return new JsObject(context['Uint8Array'], [list]);
+}
+
+bool jsObjectHasLength(JsObject jsObject) {
+  return jsObject.hasProperty('length');
+}
+
+int jsObjectLength(JsObject jsObject) {
+  return jsObject['length'];
+}
+
+dynamic jsArrayItem(JsObject jsObject, int index) {
+  return jsObject[index];
+}
+
+String jsObjectOrAnyToDebugString(dynamic object) {
+  if (object is JsObject) {
+    return jsObjectToDebugString(object);
+  } else if (object == null) {
+    return null;
+  } else {
+    return object.toString();
+  }
+}
+
+String jsObjectToDebugString(JsObject jsObject) {
+  if (jsObject == null) {
+    return null;
+  }
+  StringBuffer sb = new StringBuffer();
+  //sb.write(jsObject.runtimeType);
+  //sb.write('-');
+  if (jsObjectHasLength(jsObject)) {
+    int length_ = jsObjectLength(jsObject);
+
+    if (length_ != null) {
+
+      if (length_ == 1) {
+        sb.write(jsObjectOrAnyToDebugString(jsArrayItem(jsObject, 0)));
+      } else {
+        sb.write('$length_ items:[');
+        for (int i = 0; i < length_; i++) {
+          //sb.writeln();
+          sb.write('$i:');
+          sb.write(jsObjectOrAnyToDebugString(jsArrayItem(jsObject, i)));
+        }
+        sb.write(']');
+      }
+      return sb.toString();
+    }
+
+  }
+  sb.write(jsObjectAsCollection(jsObject));
+  return sb.toString();
 }
