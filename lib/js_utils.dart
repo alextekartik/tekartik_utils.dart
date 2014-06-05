@@ -153,6 +153,9 @@ String jsObjectToDebugString(JsObject jsObject) {
         sb.write('$length_ items:[');
         for (int i = 0; i < length_; i++) {
           //sb.writeln();
+          if (i > 0) {
+            sb.write(',');
+          }
           sb.write('$i:');
           sb.write(jsObjectOrAnyToDebugString(jsArrayItem(jsObject, i)));
         }

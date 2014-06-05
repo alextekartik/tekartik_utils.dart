@@ -3,3 +3,4 @@ version: 0.0.1
 description: Common dart utilities
 dev_dependencies:
   unittest: any
+  browser: any
