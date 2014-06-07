@@ -10,6 +10,11 @@ void devPrint(Object object) {
 
 devError(String msg) {
   // one day remove the print however sometimes the error thrown is hidden
-  print("# ERROR $msg");
-  throw new UnsupportedError(msg);
+  try {
+    throw new UnsupportedError(msg);
+  } catch (e, st) {
+    print("# ERROR $msg");
+    print(st);
+    throw e;
+  }
 }
