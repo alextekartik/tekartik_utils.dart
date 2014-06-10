@@ -34,7 +34,7 @@ Future debugLoadJavascriptScript(String src) {
     print('onDone');
   });
   script.src = src;
-  document.body.children.add(script);
+  document.head.children.add(script);
   return completer.future;
 }
 
@@ -53,7 +53,7 @@ Future loadJavascriptScript(String src) {
     completer.complete();
   });
   script.src = src;
-  document.body.children.add(script);
+  document.head.children.add(script);
   return completer.future;
 }
 
