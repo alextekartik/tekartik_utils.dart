@@ -8,7 +8,7 @@ void devPrint(Object object) {
   print(object);
 }
 
-devError(String msg) {
+devError([String msg = null]) {
   // one day remove the print however sometimes the error thrown is hidden
   try {
     throw new UnsupportedError(msg);
