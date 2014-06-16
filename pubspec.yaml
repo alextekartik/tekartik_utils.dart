@@ -5,3 +5,4 @@ dev_dependencies:
   unittest: any
   browser: any
   collection: any
+  logging: any
