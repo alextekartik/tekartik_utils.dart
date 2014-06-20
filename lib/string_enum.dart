@@ -4,6 +4,8 @@ abstract class StringEnum {
   String name;
   StringEnum();
 
+  StringEnum.withName(this.name);
+  
   @override
   String toString() => name;
 
