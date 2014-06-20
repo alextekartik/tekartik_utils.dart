@@ -1,4 +1,4 @@
-library string_enum;
+library tekartik_string_enum;
 
 abstract class StringEnum {
   String name;

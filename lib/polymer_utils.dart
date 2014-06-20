@@ -1,4 +1,4 @@
-library polymer_utils;
+library tekartik_polymer_utils;
 
 import 'dart:html';
 
