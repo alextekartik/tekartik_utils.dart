@@ -17,7 +17,7 @@ debugQuickLogging(Level level) {
 setupQuickLogging([Level level]) {
   if (!_quickLoggingSetup) {
     hierarchicalLoggingEnabled = true;
-    PrintHandler handler = new PrintHandler();
+    _PrintHandler handler = new _PrintHandler();
     Logger.root.onRecord.listen((LogRecord logRecord) {
       handler.call(logRecord);
       
@@ -31,7 +31,7 @@ setupQuickLogging([Level level]) {
   
 }
 
-class PrintHandler {
+class _PrintHandler {
   void call(LogRecord logRecord) {
     print("${logRecord.time} ${logRecord.loggerName} ${logRecord.level} ${logRecord.message}");
   }

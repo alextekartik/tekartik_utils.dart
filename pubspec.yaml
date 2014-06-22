@@ -1,8 +1,8 @@
 name: tekartik_utils
-version: 0.0.2
+version: 0.0.3
 description: Common dart utilities
 dev_dependencies:
-  unittest: any
   browser: any
   collection: any
   logging: any
+  unittest: any
