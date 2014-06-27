@@ -8,6 +8,9 @@ void devPrint(Object object) {
   print(object);
 }
 
+@deprecated
+int devWarning;
+
 devError([String msg = null]) {
   // one day remove the print however sometimes the error thrown is hidden
   try {
