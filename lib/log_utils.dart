@@ -37,8 +37,8 @@ class _PrintHandler {
   }
 }
 
-final List<Level> LOG_LEVELS = [Level.SHOUT, Level.SEVERE, Level.WARNING, Level.INFO, Level.CONFIG, Level.FINE, Level.FINER, Level.FINEST, Level.ALL];
-Level parseLogLevel(String levelText) {
+final List<Level> LOG_LEVELS = [Level.OFF, Level.SHOUT, Level.SEVERE, Level.WARNING, Level.INFO, Level.CONFIG, Level.FINE, Level.FINER, Level.FINEST, Level.ALL];
+Level parseLogLevel(String levelText, [Level defaultLevel = Level.OFF]) {
 
   if (levelText != null) {
     levelText = levelText.toUpperCase();
@@ -49,7 +49,7 @@ Level parseLogLevel(String levelText) {
       }
     }
   }
-  return Level.OFF;
+  return defaultLevel;
 }
 
 Logger _log;
