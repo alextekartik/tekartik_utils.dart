@@ -1,8 +1,9 @@
+library js_utils_browser_test;
+
 import 'package:tekartik_utils/js_utils.dart';
 import 'package:tekartik_utils/test_utils_browser.dart';
 
 main() {
-  useHtmlConfiguration();
   test('jsObject', () {
     JsObject jsObject = new JsObject.jsify({"test": "value"});
     expect(jsRuntimeType(jsObject), "Object");

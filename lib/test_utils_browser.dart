@@ -1,7 +1,10 @@
 /**
  * The only file to include for convenient browser test
  * 
- * template code
+ * template code:
+ * 
+ * import 'package:tekartik_utils/test_utils_browser.dart';
+ * 
  * main() {
  *   useHtmlConfiguration();
  *   test('my test', () {
