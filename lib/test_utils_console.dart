@@ -14,6 +14,6 @@
  */
 library tekartik_test_utils_console;
 
-export 'package:unittest/unittest.dart';
+export 'test_utils.dart';
 export 'package:unittest/vm_config.dart';
 

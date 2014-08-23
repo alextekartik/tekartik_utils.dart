@@ -1,9 +1,7 @@
 library tekartik_css_utils;
 
-import 'dart:js';
 import 'dart:async';
 import 'dart:html';
-import 'dart:typed_data';
 
 Future loadStylesheet(String src) {
   Completer completer = new Completer();

@@ -13,13 +13,15 @@ main() {
   version_utils_test.main();
   group('dev', () {
     setUp(() {
-      devPrintEnabled = false;
+      tekartikDevPrintEnabled = false;
     });
     dev_utils_test.main();
-    tearDown(() { devPrintEnabled = true;});
+    tearDown(() {
+      tekartikDevPrintEnabled = true;
+    });
   });
- 
- 
- 
- 
+
+
+
+
 }

@@ -1,10 +1,8 @@
 library string_enum_test;
 
-import 'package:tekartik_utils/dev_utils.dart';
+//import 'package:tekartik_utils/dev_utils.dart';
 import 'package:tekartik_utils/browser_detect_utils.dart';
 import 'package:unittest/unittest.dart';
-import 'package:tekartik_utils/version.dart';
-
 
 void main() {
   group('browser_detect', () {

@@ -8,12 +8,12 @@ void main() {
   group('dev_utils', () {
     test('devPrint', () {
 
-      devPrint("dev print message");
+      tekartikDevPrint("dev print message");
 
     });
     test('devError', () {
       try {
-        devError("from test not supported");
+        tekartikDevError("from test not supported");
         fail('no');
       } catch (e) {
 

@@ -87,3 +87,29 @@ String formatTimestampMs(num timestamp) {
     return '${_stringPrefilled("${s % 100}", 2, "0")}.${_stringPrefilled("$ms", 3, "0")}';
   }
 }
+
+/**
+ * from 00.00 to 100.0
+ */
+String format0To1AsPercent(num value) {
+  int size = 6;
+  String txt;
+  
+  if (value == null) {
+    return _stringPrefilled('(nul)', 5, ' ');  
+  } else {
+    num per10000 = value * 10000;
+    int per100 = per10000 ~/ 100;
+    int cents = (per10000 - per100 * 100).round();
+    if (cents == 100) {
+      per100 += 1;
+      cents = 0;
+    }
+    int centsDigitCount = 2;
+    if (per100 >= 100) {
+      centsDigitCount = 1;
+      cents ~/= 10;
+    }
+    return '${_stringPrefilled("${per100}", 2, "0")}.${_stringPrefilled("$cents", centsDigitCount, "0")}';
+  }
+}
