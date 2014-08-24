@@ -1,6 +1,7 @@
 library tekartik_version_utils;
 
 import 'package:tekartik_utils/version.dart';
+export 'package:tekartik_utils/version.dart';
 
 /// Regex that matches a version number at the beginning of a string.
 final _START_VERSION = new RegExp(r'^' // Start at beginning.
