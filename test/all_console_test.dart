@@ -1,8 +1,4 @@
-import 'package:tekartik_utils/test_utils_console.dart';
-import 'all_common.dart' as all_common; 
+// kept for drone.io
+import 'test_runner_io.dart' as test_runner_io; 
 
-main() {
-  useVMConfiguration();
-  all_common.main();
-  
-}
+main() => test_runner_io.main();
