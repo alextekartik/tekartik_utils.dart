@@ -1,5 +1,5 @@
 import 'package:tekartik_utils/test_utils_io.dart';
-import 'all_common.dart' as all_common; 
+import 'test_runner.dart' as all_common; 
 
 main() {
   useVMConfiguration();

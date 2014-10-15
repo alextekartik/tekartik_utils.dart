@@ -1,7 +1,7 @@
 library tekartik_test_utils;
 
 import 'package:unittest/unittest.dart' as unittest;
-export 'package:unittest/unittest.dart' hide solo_test, solo_group;
+export 'package:unittest/unittest.dart' hide solo_test, solo_group, skip_test, skip_group;
 export 'dev_utils.dart';
 
 @deprecated
@@ -15,13 +15,28 @@ solo_group(spec, dynamic body()) {
 }
 
 @deprecated
+tmp_solo_group(spec, dynamic body()) {
+  unittest.solo_group(spec, body);
+}
+
+@deprecated
 tmp_solo_test(spec, dynamic body()) {
   unittest.solo_test(spec, body);
 }
 
 @deprecated
+skip_test(spec, dynamic body()) {
+  unittest.skip_test(spec, body);
+}
+
+@deprecated
 tmp_skip_test(spec, dynamic body()) {
   unittest.skip_test(spec, body);
+}
+
+@deprecated
+skip_group(spec, dynamic body()) {
+  unittest.skip_group(spec, body);
 }
 
 @deprecated
