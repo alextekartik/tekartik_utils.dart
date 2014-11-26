@@ -2,7 +2,7 @@ library tekartik_test_utils;
 
 import 'package:unittest/unittest.dart' as unittest;
 export 'package:unittest/unittest.dart' hide solo_test, solo_group, skip_test, skip_group;
-export 'dev_utils.dart';
+export 'package:tekartik_core/dev_utils.dart';
 
 @deprecated
 solo_test(spec, dynamic body()) {

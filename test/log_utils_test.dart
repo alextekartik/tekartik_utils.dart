@@ -3,7 +3,7 @@ library log_utils_test;
 import 'package:unittest/unittest.dart';
 //import 'package:unittest/vm_config.dart';
 import 'package:logging/logging.dart' as log;
-import 'package:tekartik_utils/log_utils.dart';
+import 'package:tekartik_core/log_utils.dart';
 
 main() {
   //useVMConfiguration();

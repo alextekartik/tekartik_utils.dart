@@ -3,7 +3,7 @@ import 'log_utils_test.dart' as log_utils_test;
 import 'test_utils_test.dart' as test_utils_test;
 import 'string_enum_test.dart' as string_enum_test;
 import 'version_utils_test.dart' as version_utils_test;
-import 'package:tekartik_utils/dev_utils.dart';
+import 'package:tekartik_core/dev_utils.dart';
 import 'dev_utils_test.dart' as dev_utils_test;
 import 'package:unittest/unittest.dart';
 

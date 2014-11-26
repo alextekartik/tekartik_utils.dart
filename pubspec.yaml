@@ -1,8 +1,14 @@
 name: tekartik_utils
-version: 0.0.4
+version: 0.0.5
 description: Common dart utilities
-dev_dependencies:
+dependencies:
   browser: any
   collection: any
   logging: any
   unittest: any
+  tekartik_core:
+    git: git://github.com/alextekartik/tekartik_core.dart.git
+dependency_overrides:
+#  tekartik_core:
+#    path: ../tekartik_core.dart
+  

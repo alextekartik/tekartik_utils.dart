@@ -1,6 +1,6 @@
 library dev_utils_test;
 
-import 'package:tekartik_utils/dev_utils.dart';
+import 'package:tekartik_core/dev_utils.dart';
 import 'package:unittest/unittest.dart';
 
 
