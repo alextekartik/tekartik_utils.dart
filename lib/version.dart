@@ -12,11 +12,10 @@ import 'dart:math';
 import 'package:collection/equality.dart';
 
 /// Regex that matches a version number at the beginning of a string.
-final _START_VERSION = new RegExp(
-    r'^'                                        // Start at beginning.
-    r'(\d+).(\d+).(\d+)'                        // Version number.
-    r'(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?'    // Pre-release.
-    r'(\+([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?'); // Build.
+final _START_VERSION = new RegExp(r'^' // Start at beginning.
+r'(\d+).(\d+).(\d+)' // Version number.
+r'(-([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?' // Pre-release.
+r'(\+([0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*))?'); // Build.
 
 /// Like [_START_VERSION] but matches the entire string.
 final _COMPLETE_VERSION = new RegExp("${_START_VERSION.pattern}\$");
@@ -83,16 +82,12 @@ class Version implements Comparable<Version>, VersionConstraint {
   /// of the parsed version.
   final String _text;
 
-  Version._(this.major, this.minor, this.patch, String preRelease, String build,
-            this._text)
+  Version._(this.major, this.minor, this.patch, String preRelease, String build, this._text)
       : preRelease = preRelease == null ? [] : _splitParts(preRelease),
         build = build == null ? [] : _splitParts(build) {
-    if (major < 0) throw new ArgumentError(
-        'Major version must be non-negative.');
-    if (minor < 0) throw new ArgumentError(
-        'Minor version must be non-negative.');
-    if (patch < 0) throw new ArgumentError(
-        'Patch version must be non-negative.');
+    if (major < 0) throw new ArgumentError('Major version must be non-negative.');
+    if (minor < 0) throw new ArgumentError('Minor version must be non-negative.');
+    if (patch < 0) throw new ArgumentError('Patch version must be non-negative.');
   }
 
   /// Creates a new [Version] object.
@@ -131,8 +126,7 @@ class Version implements Comparable<Version>, VersionConstraint {
   static Version primary(List<Version> versions) {
     var primary;
     for (var version in versions) {
-      if (primary == null || (!version.isPreRelease && primary.isPreRelease) ||
-          (version.isPreRelease == primary.isPreRelease && version > primary)) {
+      if (primary == null || (!version.isPreRelease && primary.isPreRelease) || (version.isPreRelease == primary.isPreRelease && version > primary)) {
         primary = version;
       }
     }
@@ -155,14 +149,10 @@ class Version implements Comparable<Version>, VersionConstraint {
 
   bool operator ==(other) {
     if (other is! Version) return false;
-    return major == other.major && minor == other.minor &&
-        patch == other.patch &&
-        _equality.equals(preRelease, other.preRelease) &&
-        _equality.equals(build, other.build);
+    return major == other.major && minor == other.minor && patch == other.patch && _equality.equals(preRelease, other.preRelease) && _equality.equals(build, other.build);
   }
 
-  int get hashCode => major ^ minor ^ patch ^ _equality.hash(preRelease) ^
-      _equality.hash(build);
+  int get hashCode => major ^ minor ^ patch ^ _equality.hash(preRelease) ^ _equality.hash(build);
 
   bool operator <(Version other) => compareTo(other) < 0;
   bool operator >(Version other) => compareTo(other) > 0;
@@ -228,8 +218,7 @@ class Version implements Comparable<Version>, VersionConstraint {
       return this == other ? this : VersionConstraint.empty;
     }
 
-    throw new ArgumentError(
-        'Unknown VersionConstraint type $other.');
+    throw new ArgumentError('Unknown VersionConstraint type $other.');
   }
 
   int compareTo(Version other) {
@@ -349,8 +338,7 @@ abstract class VersionConstraint {
 
       var version = matchVersion();
       if (version == null) {
-        throw new FormatException('Expected version number after "$op" in '
-            '"$originalText", got "$text".');
+        throw new FormatException('Expected version number after "$op" in ' '"$originalText", got "$text".');
       }
 
       switch (op) {
@@ -383,8 +371,7 @@ abstract class VersionConstraint {
       }
 
       // If we got here, we couldn't parse the remaining string.
-      throw new FormatException('Could not parse version "$originalText". '
-          'Unknown text at "$text".');
+      throw new FormatException('Could not parse version "$originalText". ' 'Unknown text at "$text".');
     }
 
     if (constraints.isEmpty) {
@@ -398,8 +385,7 @@ abstract class VersionConstraint {
   /// [constraints]. It will only allow versions that all of those constraints
   /// allow. If constraints is empty, then it returns a VersionConstraint that
   /// allows all versions.
-  factory VersionConstraint.intersection(
-      Iterable<VersionConstraint> constraints) {
+  factory VersionConstraint.intersection(Iterable<VersionConstraint> constraints) {
     var constraint = new VersionRange();
     for (var other in constraints) {
       constraint = constraint.intersect(other);
@@ -431,21 +417,16 @@ class VersionRange implements VersionConstraint {
   final bool includeMin;
   final bool includeMax;
 
-  VersionRange({this.min, this.max,
-      this.includeMin: false, this.includeMax: false}) {
+  VersionRange({this.min, this.max, this.includeMin: false, this.includeMax: false}) {
     if (min != null && max != null && min > max) {
-      throw new ArgumentError(
-          'Minimum version ("$min") must be less than maximum ("$max").');
+      throw new ArgumentError('Minimum version ("$min") must be less than maximum ("$max").');
     }
   }
 
   bool operator ==(other) {
     if (other is! VersionRange) return false;
 
-    return min == other.min &&
-           max == other.max &&
-           includeMin == other.includeMin &&
-           includeMax == other.includeMax;
+    return min == other.min && max == other.max && includeMin == other.includeMin && includeMax == other.includeMax;
   }
 
   bool get isEmpty => false;
@@ -510,19 +491,16 @@ class VersionRange implements VersionConstraint {
         return VersionConstraint.empty;
       }
 
-      if (intersectMin != null && intersectMax != null &&
-          intersectMin > intersectMax) {
+      if (intersectMin != null && intersectMax != null && intersectMin > intersectMax) {
         // Non-overlapping ranges, so empty.
         return VersionConstraint.empty;
       }
 
       // If we got here, there is an actual range.
-      return new VersionRange(min: intersectMin, max: intersectMax,
-          includeMin: intersectIncludeMin, includeMax: intersectIncludeMax);
+      return new VersionRange(min: intersectMin, max: intersectMax, includeMin: intersectIncludeMin, includeMax: intersectIncludeMax);
     }
 
-    throw new ArgumentError(
-        'Unknown VersionConstraint type $other.');
+    throw new ArgumentError('Unknown VersionConstraint type $other.');
   }
 
   String toString() {

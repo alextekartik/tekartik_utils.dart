@@ -8,7 +8,7 @@ import 'package:tekartik_utils/version.dart';
 
 void main() {
   group('browser_detect', () {
-    
+
     BrowserDetectCommon browserDetect = new BrowserDetectCommon();
 
     _checkSingleBrowser() {

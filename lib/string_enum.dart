@@ -5,7 +5,7 @@ abstract class StringEnum {
   StringEnum();
 
   StringEnum.withName(this.name);
-  
+
   @override
   String toString() => name;
 
@@ -21,6 +21,6 @@ abstract class StringEnum {
     }
     return super == (other);
   }
-  
+
   String get value => name;
 }

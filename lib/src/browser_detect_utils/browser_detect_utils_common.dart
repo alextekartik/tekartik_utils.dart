@@ -84,7 +84,7 @@ class BrowserDetectCommon {
   String _userAgent;
 
   String get userAgent => _userAgent;
-  
+
   set userAgent(String userAgent_) {
     this._userAgent = userAgent_;
     _isFirefox = null;

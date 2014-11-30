@@ -5,12 +5,12 @@ import 'src/browser_detect_utils/browser_detect_utils_common.dart';
 export 'src/browser_detect_utils/browser_detect_utils_common.dart';
 
 class BrowserDetect extends BrowserDetectCommon {
-  @override 
+  @override
   init() {
-   if (userAgent == null) {
-     userAgent = window.navigator.userAgent;
-   }
- }
+    if (userAgent == null) {
+      userAgent = window.navigator.userAgent;
+    }
+  }
 }
 
 BrowserDetect _browserDetect;
