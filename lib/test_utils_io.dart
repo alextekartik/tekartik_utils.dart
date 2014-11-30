@@ -1,19 +1,4 @@
-/**
- * The only file to include for convenient console test
- * 
- * template code:
- * 
- * import 'package:tekartik_utils/test_utils_io.dart';
- * 
- * main() {
- *   useVMConfiguration();
- *   test('my test', () {
- *     print my test
- *   });
- * }
- */
-library tekartik_test_utils_console;
+@deprecated // 2014-11
+library tekartik_utils_test_utils_io;
 
-export 'test_utils.dart';
-export 'package:unittest/vm_config.dart';
-
+export 'package:tekartik_test/test_utils_io.dart';

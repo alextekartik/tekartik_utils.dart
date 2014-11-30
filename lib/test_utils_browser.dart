@@ -16,6 +16,6 @@ library tekartik_test_utils_browser;
 
 export 'dart:html';
 export 'dart:js';
-export 'test_utils.dart';
+export 'package:tekartik_test/test_utils.dart';
 export 'package:unittest/html_config.dart';
 

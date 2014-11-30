@@ -1,5 +1,5 @@
-@deprecated
+@deprecated // 2014-10
 library tekartik_test_utils_console;
 
-export 'test_utils_io.dart';
+export 'package:tekartik_test/test_utils_io.dart';
 
