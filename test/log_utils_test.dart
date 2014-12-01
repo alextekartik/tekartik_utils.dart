@@ -5,9 +5,9 @@ import 'package:unittest/unittest.dart';
 import 'package:logging/logging.dart' as log;
 import 'package:tekartik_core/log_utils.dart';
 
-main() {
-  //useVMConfiguration();
+void main() => defineTests();
 
+void defineTests() {
   group('log', () {
     test('parse level', () {
       expect(parseLogLevel('info'), equals(log.Level.INFO));

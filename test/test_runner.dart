@@ -4,6 +4,7 @@ import 'string_enum_test.dart' as string_enum_test;
 import 'version_utils_test.dart' as version_utils_test;
 import 'package:tekartik_core/dev_utils.dart';
 import 'dev_utils_test.dart' as dev_utils_test;
+import 'json_utils_test.dart' as json_utils_test;
 import 'package:unittest/unittest.dart';
 
 main() {
@@ -11,6 +12,7 @@ main() {
   log_utils_test.main();
   string_enum_test.main();
   version_utils_test.main();
+  json_utils_test.defineTests();
   group('dev', () {
     setUp(() {
       tekartikDevPrintEnabled = false;
