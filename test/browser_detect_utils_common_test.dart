@@ -5,8 +5,9 @@ import 'package:tekartik_utils/src/browser_detect_utils/browser_detect_utils_com
 import 'package:unittest/unittest.dart';
 import 'package:tekartik_utils/version.dart';
 
+void main() => defineTests();
 
-void main() {
+void defineTests() {
   group('browser_detect', () {
 
     BrowserDetectCommon browserDetect = new BrowserDetectCommon();

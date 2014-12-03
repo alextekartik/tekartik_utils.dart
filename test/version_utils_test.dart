@@ -5,7 +5,9 @@ import 'package:unittest/unittest.dart';
 import 'package:tekartik_utils/version_utils.dart';
 import 'package:tekartik_utils/version.dart';
 
-main() {
+void main() => defineTests();
+
+void defineTests() {
   //useVMConfiguration();
   group('version', () {
 
