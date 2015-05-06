@@ -1,7 +1,10 @@
+@TestOn("!vm")
+
 library js_utils_browser_test;
 
+import 'dart:js';
 import 'package:tekartik_utils/js_utils.dart';
-import 'package:tekartik_utils/test_utils_browser.dart';
+import 'package:test/test.dart';
 
 main() {
   test('jsObject', () {

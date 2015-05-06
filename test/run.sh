@@ -2,4 +2,4 @@
 
 _DIR=$(dirname $BASH_SOURCE)
 
-dart ${_DIR}/test_runner_io.dart
+pub run test:test -p vm -p dartium -r expanded

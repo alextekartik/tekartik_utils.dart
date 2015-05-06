@@ -2,7 +2,7 @@ library browser_detect_utils_common_test;
 
 //import 'package:tekartik_utils/dev_utils.dart';
 import 'package:tekartik_utils/src/browser_detect_utils/browser_detect_utils_common.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import 'package:tekartik_utils/version.dart';
 
 void main() => defineTests();

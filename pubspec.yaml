@@ -8,9 +8,9 @@ dependencies:
   tekartik_core:
     git: git://github.com/alextekartik/tekartik_core.dart
 dev_dependencies:
-  unittest: any
-  tekartik_test:
-    git: git://github.com/alextekartik/tekartik_test.dart
+  test: any
+#  tekartik_test:
+#    git: git://github.com/alextekartik/tekartik_test.dart
 dependency_overrides:
 #  tekartik_core:
 #    path: ../tekartik_core.dart

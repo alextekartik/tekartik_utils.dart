@@ -1,6 +1,6 @@
 library log_utils_test;
 
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 //import 'package:unittest/vm_config.dart';
 import 'package:logging/logging.dart' as log;
 import 'package:tekartik_core/log_utils.dart';

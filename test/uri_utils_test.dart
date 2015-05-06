@@ -1,6 +1,6 @@
 library uri_utils_tests;
 
-import 'package:tekartik_test/test_utils.dart';
+import 'package:test/test.dart';
 import 'package:tekartik_utils/uri_utils.dart';
 
 void main() => defineTests();

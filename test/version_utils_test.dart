@@ -1,6 +1,6 @@
 library version_utils_test;
 
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 //import 'package:unittest/vm_config.dart';
 import 'package:tekartik_utils/version_utils.dart';
 import 'package:tekartik_utils/version.dart';

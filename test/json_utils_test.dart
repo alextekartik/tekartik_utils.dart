@@ -1,6 +1,6 @@
 library json_utils_tests;
 
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import 'package:tekartik_utils/json_utils.dart';
 
 void main() => defineTests();

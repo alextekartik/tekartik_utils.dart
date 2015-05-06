@@ -1,7 +1,7 @@
 library string_enum_test;
 
 import 'package:tekartik_utils/string_enum.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 class TwoChoicesEnum extends StringEnum {
 
