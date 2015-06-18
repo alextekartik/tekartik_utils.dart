@@ -94,32 +94,5 @@ String jsObjectToDebugString(JsObject jsObject) {
   if (jsObject == null) {
     return null;
   }
-  StringBuffer sb = new StringBuffer();
-  //sb.write(jsObject.runtimeType);
-  //sb.write('-');
-  if (jsObjectHasLength(jsObject)) {
-    int length_ = jsObjectLength(jsObject);
-
-    if (length_ != null) {
-
-      if (length_ == 1) {
-        sb.write(jsObjectOrAnyToDebugString(jsArrayItem(jsObject, 0)));
-      } else {
-        sb.write('$length_ items:[');
-        for (int i = 0; i < length_; i++) {
-          //sb.writeln();
-          if (i > 0) {
-            sb.write(',');
-          }
-          sb.write('$i:');
-          sb.write(jsObjectOrAnyToDebugString(jsArrayItem(jsObject, i)));
-        }
-        sb.write(']');
-      }
-      return sb.toString();
-    }
-
-  }
-  sb.write(jsObjectAsCollection(jsObject));
-  return sb.toString();
+  return jsObjectAsCollection(jsObject).toString();
 }

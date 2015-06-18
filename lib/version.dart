@@ -115,7 +115,7 @@ class Version implements Comparable<Version>, VersionConstraint {
       String build = match[8];
 
       return new Version._(major, minor, patch, preRelease, build, text);
-    } on FormatException catch (ex) {
+    } on FormatException catch (_) {
       throw new FormatException('Could not parse "$text".');
     }
   }
@@ -140,7 +140,7 @@ class Version implements Comparable<Version>, VersionConstraint {
     return text.split('.').map((part) {
       try {
         return int.parse(part);
-      } on FormatException catch (ex) {
+      } on FormatException catch (_) {
         // Not a number.
         return part;
       }

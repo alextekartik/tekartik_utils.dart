@@ -26,7 +26,7 @@ final _FOUR_NUMBER_COMPLETE_VERSION = new RegExp("${_FOUR_NUMBER_START_VERSION.p
 Version parseVersion(String text) {
   try {
     return new Version.parse(text);
-  } on FormatException catch (e, st) {
+  } on FormatException catch (e, _) {
     Match match = _COMPLETE_VERSION.firstMatch(text);
     if (match != null) {
 
@@ -38,7 +38,7 @@ Version parseVersion(String text) {
         int minor = int.parse(match[2]);
 
         return new Version(major, minor, 0);
-      } on FormatException catch (ex) {
+      } on FormatException catch (_) {
         throw e;
 
       }
@@ -56,7 +56,7 @@ Version parseVersion(String text) {
           String build = match[4];
 
           return new Version(major, minor, patch, build: build);
-        } on FormatException catch (ex) {
+        } on FormatException catch (_) {
           throw e;
 
         }

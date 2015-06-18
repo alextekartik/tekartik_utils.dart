@@ -1,20 +1,5 @@
-/**
- * The only file to include for convenient browser test
- * 
- * template code:
- * 
- * import 'package:tekartik_utils/test_utils_browser.dart';
- * 
- * main() {
- *   useHtmlConfiguration();
- *   test('my test', () {
- *     print my test
- *   });
- * }
- */
+@deprecated
 library tekartik_test_utils_browser;
 
 export 'dart:html';
 export 'dart:js';
-export 'package:tekartik_test/test_utils.dart';
-export 'package:unittest/html_config.dart';
