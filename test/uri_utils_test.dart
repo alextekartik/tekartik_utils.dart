@@ -41,9 +41,10 @@ void defineTests() {
     //Uri.parse(uri)
   });
 
-  test('uriPath', () {
-    expect(uriPath('.'), equals('.'));
-    expect(uriPath('file:///path/file?env'), equals('/path/file'));
+  test('urlPath', () {
+    //print(uriPath('.'));
+    //print(uriPath('.'));
+    expect(urlPath('file:///path/file?env'), equals('/path/file'));
   });
 
   test('urlRoot', () {

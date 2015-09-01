@@ -2,6 +2,7 @@
 build/
 packages/
 packages
+.packages
 .pub/
 .idea/
 
