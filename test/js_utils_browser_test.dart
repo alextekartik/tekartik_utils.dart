@@ -80,6 +80,12 @@ main() {
       expect(jsObjectToDebugString(new JsObject.fromBrowserObject(document)), contains("browser"));
     });
 
+    test('loadJs', () async {
+      expect(context["tekartik_simple_script_text"], null);
+      await loadJavascriptScript("data/simple_script.js");
+      //await loadJavascriptScript("https://apis.google.com/js/client.js");
+      expect(context["tekartik_simple_script_text"], "hello");
+    });
 
   });
 
