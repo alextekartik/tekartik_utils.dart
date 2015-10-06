@@ -52,36 +52,48 @@ String urlNonAbsolutePath(String path) {
   return path;
 }
 
-String urlChangeQueryParameters(String url, Map<String, String> newQueryParams) {
+String urlChangeQueryParameters(
+    String url, Map<String, String> newQueryParams) {
   Uri uri = Uri.parse(url);
   return uriChangeQueryParameters(uri, newQueryParams).toString();
 }
 
-
 Uri uriChangeQueryParameters(Uri uri, Map<String, String> newQueryParams) {
-  return new Uri(scheme: uri.scheme, userInfo: uri.userInfo, host: uri.host, port: uri.port, path: uri.path //
-  , queryParameters: newQueryParams //
-  , fragment: null);
+  return new Uri(
+      scheme: uri.scheme,
+      userInfo: uri.userInfo,
+      host: uri.host,
+      port: uri.port,
+      path: uri.path //
+      ,
+      queryParameters: newQueryParams //
+      ,
+      fragment: null);
 }
 
 Uri uriNoParamNoFragment(Uri uri) {
-  return new Uri(scheme: uri.scheme, userInfo: uri.userInfo, //
-  host: uri.host, port: uri.port, //
-  path: uri.path);
-
+  return new Uri(
+      scheme: uri.scheme,
+      userInfo: uri.userInfo, //
+      host: uri.host,
+      port: uri.port, //
+      path: uri.path);
 }
 
 String urlNoParamNoFragment(String url) {
   return uriNoParamNoFragment(Uri.parse(url)).toString();
 }
+
 String urlRoot(String url) {
   return uriRoot(Uri.parse(url)).toString();
 }
 
 Uri uriRoot(Uri uri) {
-  return new Uri(scheme: uri.scheme, userInfo: uri.userInfo, //
-  host: uri.host, port: uri.port);
-
+  return new Uri(
+      scheme: uri.scheme,
+      userInfo: uri.userInfo, //
+      host: uri.host,
+      port: uri.port);
 }
 
 String urlHashFix(String hash) {

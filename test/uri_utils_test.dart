@@ -24,7 +24,6 @@ void defineTests() {
     expect(params['t'], equals("1"));
     expect(params['y'], isNull);
 
-
     expect(uriGetArguments('?tata&log=info&tutu=1')['tutu'], equals('1'));
     expect(uriGetArguments('?tata&log=info&tutu=1')['tata'], equals(''));
     expect(uriGetArguments('tata&log=info&tutu=1')['tata'], equals(''));
@@ -32,7 +31,8 @@ void defineTests() {
     expect(uriGetArguments(null).isEmpty, isTrue);
 
     // Handle decoding
-    String search = 'state=%7B"ids":%5B"0B4xfXXDGtr7XbGZvaGZadlAtb1U"%5D,"action":"open","userId":"106049382465267012344"%7D';
+    String search =
+        'state=%7B"ids":%5B"0B4xfXXDGtr7XbGZvaGZadlAtb1U"%5D,"action":"open","userId":"106049382465267012344"%7D';
     //Map map = Uri.splitQueryString(search); // this fails as it does not handle the ?
     Map map = uriGetArguments(search);
     //print(map['state']);
@@ -48,10 +48,7 @@ void defineTests() {
   });
 
   test('urlRoot', () {
-    expect(urlRoot('http://localhost:8080/gsitesw.html#alexcavaquinho'), 'http://localhost:8080');
+    expect(urlRoot('http://localhost:8080/gsitesw.html#alexcavaquinho'),
+        'http://localhost:8080');
   });
-
-
-
-
 }

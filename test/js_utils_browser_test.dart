@@ -1,5 +1,4 @@
 @TestOn("!vm")
-
 library js_utils_browser_test;
 
 import 'dart:js';
@@ -8,12 +7,9 @@ import 'package:test/test.dart';
 import 'dart:html';
 
 main() {
-  group('JsObject', ()
-  {
+  group('JsObject', () {
     test('type', () {
-      JsObject jsObject = new JsObject.jsify({
-        "test": "value"
-      });
+      JsObject jsObject = new JsObject.jsify({"test": "value"});
       expect(jsRuntimeType(jsObject), "Object");
       expect(jsObject.runtimeType, JsObject);
 
@@ -77,7 +73,8 @@ main() {
       expect(jsObjectToDebugString(new JsObject.jsify({})), "{}");
       expect(jsObjectToDebugString(new JsArray()), "[]");
 
-      expect(jsObjectToDebugString(new JsObject.fromBrowserObject(document)), contains("browser"));
+      expect(jsObjectToDebugString(new JsObject.fromBrowserObject(document)),
+          contains("browser"));
     });
 
     test('loadJs', () async {
@@ -86,8 +83,5 @@ main() {
       //await loadJavascriptScript("https://apis.google.com/js/client.js");
       expect(context["tekartik_simple_script_text"], "hello");
     });
-
   });
-
-
 }

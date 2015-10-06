@@ -3,11 +3,9 @@
  */
 library tekartik_browser_utils_common;
 
-import 'package:tekartik_utils/version.dart';
 import 'package:tekartik_utils/version_utils.dart';
 
 class BrowserDetectCommon {
-
 // Handle stuff like 'Trident/7.0, Chrome/29.0...'
   bool _checkAndGetVersion(String name) {
     int index = _userAgent.indexOf(name);
@@ -25,8 +23,8 @@ class BrowserDetectCommon {
       return true;
     }
     return false;
-
   }
+
   Version _browserVersion;
 
   Version get browserVersion => _browserVersion;
@@ -95,5 +93,4 @@ class BrowserDetectCommon {
 
   // To override
   init() {}
-
 }

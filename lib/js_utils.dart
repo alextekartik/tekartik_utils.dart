@@ -59,7 +59,6 @@ Future loadJavascriptScript(String src) {
   return completer.future;
 }
 
-
 String jsRuntimeType(JsObject jsObject) {
   return jsObject['constructor']['name'].toString();
 }

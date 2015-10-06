@@ -1,5 +1,4 @@
 @TestOn("!vm")
-
 library string_enum_test;
 
 //import 'package:tekartik_utils/dev_utils.dart';
@@ -8,7 +7,6 @@ import 'package:test/test.dart';
 
 void main() {
   group('browser_detect', () {
-
     _checkSingleBrowser() {
       if (isChrome) {
         expect(isIe || isFirefox || isSafari, isFalse);
@@ -33,6 +31,20 @@ void main() {
       expect(isIe || isSafari || isChrome || isFirefox, isTrue);
     });
 
-  });
+    test('chrome', () {
+      expect(isChrome, isTrue);
+    }, testOn: "chrome || dartium || content-shell");
 
+    test('firefox', () {
+      expect(isFirefox, isTrue);
+    }, testOn: "firefox");
+
+    test('ie', () {
+      expect(isIe, isTrue);
+    }, testOn: "ie");
+
+    test('safari', () {
+      expect(isSafari, isTrue);
+    }, testOn: "safari");
+  });
 }
