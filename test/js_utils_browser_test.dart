@@ -11,17 +11,17 @@ main() {
     test('type', () {
       JsObject jsObject = new JsObject.jsify({"test": "value"});
       expect(jsRuntimeType(jsObject), "Object");
-      expect(jsObject.runtimeType, JsObject);
+      //expect(jsObject.runtimeType, JsObjectImpl);
 
       JsArray jsArray = new JsArray();
-      expect(jsArray.runtimeType, JsArray);
+      //expect(jsArray.runtimeType, JsArray);
       expect(jsRuntimeType(jsArray), "Array");
 
       expect(jsObjectLength(jsObject), null);
       expect(jsObjectLength(jsArray), 0);
 
       jsObject = new JsObject.jsify([]);
-      expect(jsObject.runtimeType, JsArray);
+      expect(jsObject is JsArray, isTrue);
       expect(jsRuntimeType(jsObject), "Array");
     });
 
