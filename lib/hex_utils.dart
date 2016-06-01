@@ -133,7 +133,8 @@ String hexPretty(List<int> data) {
       }
 
       int charCode = buffer[i];
-      bool isPrintable(int charCode) => charCode >= 32 && charCode <= 126; // not including delete
+      bool isPrintable(int charCode) =>
+          charCode >= 32 && charCode <= 126; // not including delete
       if (isPrintable(charCode)) {
         out.writeCharCode(charCode);
       } else {
