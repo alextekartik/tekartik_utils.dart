@@ -1,6 +1,7 @@
 library tekartik_utils.hex_utils;
 
 import 'dart:math';
+import 'dart:convert';
 
 /**
  * 
@@ -132,7 +133,8 @@ String hexPretty(List<int> data) {
       }
 
       int charCode = buffer[i];
-      if (charCode >= 32 && charCode <= 255) {
+      bool isPrintable(int charCode) => charCode >= 32 && charCode <= 126; // not including delete
+      if (isPrintable(charCode)) {
         out.writeCharCode(charCode);
       } else {
         out.write('?');
