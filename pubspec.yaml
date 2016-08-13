@@ -8,6 +8,8 @@ dependencies:
   pub_semver: any
   tekartik_core:
     git: git://github.com/alextekartik/tekartik_core.dart
+  tekartik_browser_utils:
+    git: git://github.com/tekartik/tekartik_browser_utils.dart
 dev_dependencies:
   test: any
   dev_test: any
