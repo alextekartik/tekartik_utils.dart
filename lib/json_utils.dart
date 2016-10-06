@@ -1,7 +1,11 @@
+// use json_utils from tekartik_common_utils
+@deprecated
 library tekartik_json_utils;
 
 import 'dart:convert';
 
+// use parseJsonObject from common_utils
+@deprecated
 Map parseJsonObject(String text, [String defaultText = null]) {
   try {
     var map = JSON.decode(text);
@@ -18,6 +22,8 @@ Map parseJsonObject(String text, [String defaultText = null]) {
   }
 }
 
+// use parseJsonList from common_utils
+@deprecated
 List parseJsonList(String text, [String defaultText = null]) {
   try {
     var list = JSON.decode(text);
