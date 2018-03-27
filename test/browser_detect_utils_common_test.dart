@@ -41,6 +41,7 @@ void defineTests() {
             isFalse);
       }
     }
+
     tearDown(() {
       // Cleanup any change
       browserDetect.userAgent = null;

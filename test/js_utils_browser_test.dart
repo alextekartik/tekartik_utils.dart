@@ -2,9 +2,9 @@
 library js_utils_browser_test;
 
 import 'dart:js';
+// ignore: deprecated_member_use
 import 'package:tekartik_utils/js_utils.dart';
 import 'package:test/test.dart';
-import 'dart:html';
 
 main() {
   group('JsObject', () {

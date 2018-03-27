@@ -1,7 +1,6 @@
 library tekartik_utils.hex_utils;
 
 import 'dart:math';
-import 'dart:convert';
 
 /**
  * 
