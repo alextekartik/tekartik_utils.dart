@@ -33,7 +33,7 @@ void main() {
 
     test('chrome', () {
       expect(isChrome, isTrue);
-    }, testOn: "chrome || content-shell");
+    }, testOn: "chrome");
 
     test('firefox', () {
       expect(isFirefox, isTrue);
