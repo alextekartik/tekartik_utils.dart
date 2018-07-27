@@ -8,7 +8,7 @@ import 'dart:convert';
 @deprecated
 Map parseJsonObject(String text, [String defaultText = null]) {
   try {
-    var map = JSON.decode(text);
+    var map = JSON.decode(text) as Map;
     if (!(map is Map)) {
       return null;
     }
@@ -18,7 +18,7 @@ Map parseJsonObject(String text, [String defaultText = null]) {
     if (defaultText == null) {
       return null;
     }
-    return JSON.decode(defaultText);
+    return JSON.decode(defaultText) as Map;
   }
 }
 
@@ -26,7 +26,7 @@ Map parseJsonObject(String text, [String defaultText = null]) {
 @deprecated
 List parseJsonList(String text, [String defaultText = null]) {
   try {
-    var list = JSON.decode(text);
+    var list = JSON.decode(text) as List;
     if (!(list is List)) {
       return null;
     }
@@ -36,6 +36,6 @@ List parseJsonList(String text, [String defaultText = null]) {
     if (defaultText == null) {
       return null;
     }
-    return JSON.decode(defaultText);
+    return JSON.decode(defaultText) as List;
   }
 }

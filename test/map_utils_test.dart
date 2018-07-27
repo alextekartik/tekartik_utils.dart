@@ -1,8 +1,9 @@
 library map_utils_tests;
 
-import 'package:test/test.dart';
-import 'package:tekartik_utils/map_utils.dart';
 import 'dart:convert';
+
+import 'package:tekartik_utils/map_utils.dart';
+import 'package:test/test.dart';
 
 main() {
   group('map utils', () {
@@ -31,7 +32,7 @@ main() {
                   }
               } }
 ''';
-      Map map = JSON.decode(json);
+      Map map = JSON.decode(json) as Map;
       expect(mapValueFromPath(map, 'products/product/warranty'), "warranty");
       expect(mapValueFromPath(map, 'products/product/warrant'), null);
     });

@@ -11,12 +11,15 @@ List cloneList(List original) {
   }
   List clone = new List();
   original.forEach((item) {
+    dynamic cloneItem;
     if (item is List) {
-      item = cloneList(item);
+      cloneItem = cloneList(item);
     } else if (item is Map) {
-      item = cloneMap(item);
+      cloneItem = cloneMap(item);
+    } else {
+      cloneItem = item;
     }
-    clone.add(item);
+    clone.add(cloneItem);
   });
   return clone;
 }

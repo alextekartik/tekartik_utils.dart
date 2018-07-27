@@ -18,19 +18,22 @@ Map mergeMap(Map mapDst, Map mapSrc) {
 Map cloneMap(Map orignal) {
   Map map = new Map();
   orignal.forEach((key, value) {
+    dynamic cloneValue;
     if (value is Map) {
-      value = cloneMap(value);
+      cloneValue = cloneMap(value);
     } else if (value is List) {
-      value = cloneList(value);
+      cloneValue = cloneList(value);
+    } else {
+      cloneValue = value;
     }
-    map[key] = value;
+    map[key] = cloneValue;
   });
   return map;
 }
 
 String mapStringValue(Map map, String key, [String defaultValue = null]) {
   if (map != null) {
-    String value = map[key];
+    String value = map[key] as String;
     if (value != null) {
       return value.toString();
     }
